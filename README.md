@@ -1,12 +1,17 @@
-# medplan
-
-# medplan mono-repo with nx
+# kafka-based-architecture mono-repo with nx
 
 ## Prerequisites
-                  
-- Docker & docker-compose
-- NodeJS                  
-- MySLQ: localhost:3036
+
+### Kafka + zookeeper (localhost:2181)
+
+- Kafka is primarily used to build real-time streaming data pipelines and applications that adapt to the data streams. It combines messaging, storage, and stream processing to allow storage and analysis of both historical and real-time data.
+- Apache Kafka is a publish-subscribe based durable messaging system. A messaging system sends messages between processes, applications, and servers. ... Another application may connect to the system and process or re-process records from a topic. The data sent is stored until a specified retention period has passed by. 
+- The project aims to provide a unified, high-throughput, low-latency platform for handling real-time data feeds.    
+Use config-scripts docker-compose.yml file to start a docker container that connect kafka to zookeeper:
+     
+     `bash docker-compose -f docker-compose.yml up`
+                                      
+- MySLQ: localhosT:3036
 - PhpMyAdmin: localhost:8081 
 
 ### MySQL 
@@ -44,8 +49,8 @@
    
 PHPMyAdmin access: http://localhost:8081
 
-
-
+Docs
+https://medium.com/@pro_ibenjell/how-to-create-a-full-stack-chat-application-using-nx-workspace-and-run-it-in-docker-65afcfe879d0
 
 
 
