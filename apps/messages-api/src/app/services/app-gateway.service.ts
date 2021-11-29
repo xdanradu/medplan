@@ -4,28 +4,26 @@ import {
   OnGatewayConnection,
   OnGatewayDisconnect,
   OnGatewayInit,
-  SubscribeMessage, MessageBody
+  SubscribeMessage, MessageBody, WsResponse
 } from '@nestjs/websockets';
 import { Socket, Server } from 'socket.io';
 import { Logger } from '@nestjs/common';
-import { IncomingMessage } from 'http';
 
-@WebSocketGateway()
+@WebSocketGateway({ cors: true })
 export class AppGateway
   implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect {
 
   @WebSocketServer() server: Server;
+
   private logger: Logger = new Logger('AppGateway');
+  private users = 0;
 
   @SubscribeMessage('msgToServer')
-  handleMessage(client: Socket, payload: string): void {
-    this.server.emit('msgToClient', payload);
-  }
-
-  @SubscribeMessage('events')
-  handleEvent(@MessageBody('id') id: number): number {
-    // console.log('id': id);
-    return id;
+  handleMessage(client: Socket, message: string): void {
+    //console.log('chat');
+    console.log(message);
+    this.server.emit('msgToClient', 'received'+message.channel);
+    // return { event: 'msgToClient', data: message };
   }
 
   afterInit(server: Server) {
@@ -33,11 +31,14 @@ export class AppGateway
   }
 
   handleDisconnect(client: Socket) {
+    this.users--;
+    this.server.emit('users', this.users);
     this.logger.log(`Client disconnected: ${client.id}`);
   }
 
-  handleConnection(client: WebSocket, ...args: any[]) {
-    console.dir((args[0] as IncomingMessage).headers );
-    this.logger.log(`Client connected: ${client}`);
+  handleConnection(client: Socket, ...args: any[]) {
+    this.users++;
+    this.logger.log(`Client connected ${client.id}`);
+    this.server.emit(`msgToClient`, `received client_id: ${client.id}`);
   }
 }

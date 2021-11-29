@@ -51,7 +51,8 @@ PHPMyAdmin access: http://localhost:8081
 
 Docs
 https://medium.com/@pro_ibenjell/how-to-create-a-full-stack-chat-application-using-nx-workspace-and-run-it-in-docker-65afcfe879d0
-
+https://www.youtube.com/watch?v=odOKUGUhgPU
+https://dev.to/bravemaster619/how-to-use-socket-io-client-correctly-in-react-app-o65
 
 
 
