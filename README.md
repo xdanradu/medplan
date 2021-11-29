@@ -1,6 +1,6 @@
 # medplan
 
-# kafka-based-architecture mono-repo with nx
+# medplan mono-repo with nx
 
 ## Prerequisites
                   
