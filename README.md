@@ -54,7 +54,11 @@ https://medium.com/@pro_ibenjell/how-to-create-a-full-stack-chat-application-usi
 https://www.youtube.com/watch?v=odOKUGUhgPU
 https://dev.to/bravemaster619/how-to-use-socket-io-client-correctly-in-react-app-o65
 
+### Generate service command
 
+```bash 
+nx generate @nrwl/nest:service gateway --project messages-api
+```
 
 # AdvancedMonorepo
 
