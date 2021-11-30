@@ -1,0 +1,28 @@
+{
+  "root": "apps/patient-ui-e2e",
+  "sourceRoot": "apps/patient-ui-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/patient-ui-e2e/cypress.json",
+        "devServerTarget": "patient-ui:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "patient-ui:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/patient-ui-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["patient-ui"]
+}

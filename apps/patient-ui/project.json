@@ -1,0 +1,70 @@
+{
+  "root": "apps/patient-ui",
+  "sourceRoot": "apps/patient-ui/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/patient-ui",
+        "index": "apps/patient-ui/src/index.html",
+        "baseHref": "/",
+        "main": "apps/patient-ui/src/main.tsx",
+        "polyfills": "apps/patient-ui/src/polyfills.ts",
+        "tsConfig": "apps/patient-ui/tsconfig.app.json",
+        "assets": ["apps/patient-ui/src/favicon.ico", "apps/patient-ui/src/assets"],
+        "styles": ["apps/patient-ui/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/patient-ui/src/environments/environment.ts",
+              "with": "apps/patient-ui/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "patient-ui:build",
+        "hmr": true,
+        "proxyConfig": "apps/patient-ui/proxy.conf.json"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "patient-ui:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/patient-ui/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/patient-ui"],
+      "options": {
+        "jestConfig": "apps/patient-ui/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

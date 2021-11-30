@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "projects": {
+    "api": "apps/api",
+    "api-interfaces": "libs/api-interfaces",
+    "messages-api": "apps/messages-api",
+    "patient-ui": "apps/patient-ui",
+    "patient-ui-e2e": "apps/patient-ui-e2e",
+    "shared": "libs/shared",
+    "ui": "libs/ui"
+  }
+}
