@@ -54,6 +54,8 @@ https://medium.com/@pro_ibenjell/how-to-create-a-full-stack-chat-application-usi
 https://www.youtube.com/watch?v=odOKUGUhgPU
 https://dev.to/bravemaster619/how-to-use-socket-io-client-correctly-in-react-app-o65
 https://www.youtube.com/watch?v=4SySDaX753A
+https://sequelize.org/master/manual/migrations.html
+https://sequelize.org/master/manual/typescript.html#installation
 
 
 ### Generate nest service command
