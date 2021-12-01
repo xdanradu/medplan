@@ -1,4 +1,1 @@
-export function shared(): any {
-
-}
-
+export function shared(): any {}

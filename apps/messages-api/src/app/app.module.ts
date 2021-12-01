@@ -4,6 +4,6 @@ import { GatewayService } from './gateway/gateway.service';
 @Module({
   imports: [],
   controllers: [],
-  providers: [GatewayService],
+  providers: [GatewayService]
 })
 export class AppModule {}

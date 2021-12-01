@@ -1,10 +1,9 @@
-import { User }  from '../models/user';
+import { User } from '../models/user';
 
 async function getUser(req, res, next) {
   try {
     await User.findAll({
-      attributes: [
-        'id', 'firstName', 'lastName', 'email'],
+      attributes: ['id', 'firstName', 'lastName', 'email'],
       where: {
         email: req.body.username,
         password: req.body.password
@@ -23,8 +22,7 @@ async function getUser(req, res, next) {
 async function getUserByEmail(req, res, next) {
   try {
     await User.findAll({
-      attributes: [
-        'id', 'firstName', 'lastName', 'email'],
+      attributes: ['id', 'firstName', 'lastName', 'email'],
       where: {
         email: req.user.email
       }
@@ -43,4 +41,4 @@ async function getUserByEmail(req, res, next) {
 module.exports = {
   getUser,
   getUserByEmail
-}
+};

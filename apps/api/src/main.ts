@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 const greeting: Message = {
   text: 'Welcome to api!',
   creationDate: '12.10.2021',
-  userId: '1',
+  userId: '1'
 };
 
 app.get('/api', (req, res) => {

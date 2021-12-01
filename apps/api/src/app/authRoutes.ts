@@ -10,7 +10,7 @@ export function addAuthRoutes(app: Express) {
     '/api/login',
     [
       check('email').isEmail().normalizeEmail(),
-      check('password').isLength({ min: 6 }),
+      check('password').isLength({ min: 6 })
     ],
     (req, res) => {
       const errors = validationResult(req);
@@ -22,7 +22,7 @@ export function addAuthRoutes(app: Express) {
       const random = Math.floor(Math.random() * 1000);
       User.create({
         email: `customer.${random}@test.com`,
-        password: `${random}`,
+        password: `${random}`
       }).then(() => {
         console.log('New user created');
       });

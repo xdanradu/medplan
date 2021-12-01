@@ -9,7 +9,7 @@ export function addTodoRoutes(app: Express) {
   });
   app.post('/api/addTodo', (req, resp) => {
     const newTodo = {
-      title: `New todo ${Math.floor(Math.random() * 1000)}`,
+      title: `New todo ${Math.floor(Math.random() * 1000)}`
     };
     todosRoutes.push(newTodo);
     resp.send(newTodo);
