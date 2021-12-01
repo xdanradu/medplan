@@ -1,17 +1,17 @@
 import './messages.module.scss';
 import React, { Component, useEffect, useState } from 'react';
-import io  from 'socket.io-client';
+import io from 'socket.io-client';
 
 const socket = io(`http://localhost:3333`);
 
-class Messages extends Component  {
-  state = { data: {} }
+class Messages extends Component {
+  state = { data: {} };
 
   componentDidMount() {
-    socket.on(`msgToClient`, data => {
+    socket.on(`msgToClient`, (data) => {
       console.log(data);
-      this.setState({ data })
-    })
+      this.setState({ data });
+    });
   }
 
   handleClick() {
@@ -23,7 +23,7 @@ class Messages extends Component  {
     };
     socket.emit('msgToServer', { channel: '12345' });
   }
-/*
+  /*
   useEffect(() => {
   ws.onmessage = function (event) {
     const json = JSON.parse(event.data);
@@ -39,12 +39,10 @@ class Messages extends Component  {
   return () => ws.close();
 }, []);
 */
-  render () {
+  render() {
     return (
       <div>
-        <button onClick={this.handleClick}>
-          Activate Lasers
-        </button>
+        <button onClick={this.handleClick}>Activate Lasers</button>
         <div></div>
       </div>
     );

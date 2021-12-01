@@ -14,7 +14,10 @@
         "main": "apps/patient-ui/src/main.tsx",
         "polyfills": "apps/patient-ui/src/polyfills.ts",
         "tsConfig": "apps/patient-ui/tsconfig.app.json",
-        "assets": ["apps/patient-ui/src/favicon.ico", "apps/patient-ui/src/assets"],
+        "assets": [
+          "apps/patient-ui/src/favicon.ico",
+          "apps/patient-ui/src/assets"
+        ],
         "styles": ["apps/patient-ui/src/styles.scss"],
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"

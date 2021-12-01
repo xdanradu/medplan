@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "root",
+    "password": "root",
+    "database": "medplan",
+    "host": "localhost",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  }
+}

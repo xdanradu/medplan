@@ -13,7 +13,6 @@ const App = () => {
   }, []);
 
   function addTodo() {
-
     fetch('/api/addTodo', {
       method: 'POST',
       body: '',
@@ -27,7 +26,7 @@ const App = () => {
   return (
     <>
       <h1>Todos</h1>
-      <Messages/>
+      <Messages />
 
       <Todos todos={todos} />
       <button id={'add-todo'} onClick={addTodo}>
